@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-fixed-top navbar-expand-xl navbar-dark bg-primary" style="position: fixed;top: 0;width: 100%;z-index:1;">
+    <a class="navbar-brand">
+      Recipe Book
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="collapsed=!collapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed=true">
+      <ul class="navbar-nav mr-auto nav-tabs">
+
+        <li class="nav-item" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse" *ngIf="!isAuthenticated">
+          <a class="nav-link" routerLink='/auth'>Authentication</a>
+        </li>
+  
+        <li class="nav-item" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse" *ngIf="isAuthenticated">
+          <a class="nav-link" routerLink='/recipes'>Recipes</a>
+        </li>
+  
+        <li class="nav-item" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse">
+          <a class="nav-link" routerLink='/shopping'>Shopping List</a>
+        </li>
+      </ul> 
+      <ul class="nav navbar-nav navbar-right" *ngIf="isAuthenticated">
+        <li><a style="cursor:pointer" class="nav-link" (click)="onLogout()">Logout</a></li>
+        <li class="dropdown" appTest>
+            <a class="dropdown-toggle nav-link" data-toggle="dropdown">Manage<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a style="color:black;cursor:pointer" (click)="saveAllRecipes()">Save Data</a></li>
+              <li><a style="color:black;cursor:pointer" (click)="fetchAllRecipes()">Fetch Data</a></li>
+            </ul>
+          </li>
+      </ul>
+    </div>
+  </nav>
+ 
