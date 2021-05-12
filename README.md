@@ -6,8 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Deployed on Firebase -- 
-Visite the link given below to check the project https://recipebookapp-95ead.web.app
+## Deployed on Firebase 
+Visit the link given below to check the project https://recipebookapp-95ead.web.app
 
 ## Code scaffolding
 
